@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  background-color: #FBFBFB;
+  font-family: "Fredoka", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: #D32C14;
+}
+
+.wrapper {
+  max-width: 1366px;
+  display: grid;
+  margin: 0 auto;
+}
+
+.wrapper .nav-header {
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  background-color: #FBFBFB;
+}
+
+.wrapper .nav-header .nav-main {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.wrapper .nav-header #logo {
+  margin: 20px;
+  font-size: 20px;
+}
+
+.wrapper .nav-header .nav-item {
+  margin: 0 10px;
+  padding: 20px;
+}
+
+.wrapper .nav-header .nav-item a {
+  text-decoration: none;
+}
+
+.wrapper .nav-header .nav-item a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.stretch {
+  width: 100%;
+}
+
+.btn {
+  padding: 10px;
+  font-family: "Fredoka", sans-serif;
+}
+
+/*# sourceMappingURL=base.css.map */

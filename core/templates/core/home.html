@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block imports %}
+<link rel="stylesheet" href="{% static 'css/core.css' %}">
+{% endblock imports %}
+
+
+{% block content %}
+<main>
+    <h1 class="center-text">Osoby zaginione</h1>
+    <div class="persons">
+        {% for person in persons %}
+        <a href="{% url 'core:detail' id=person.id%}">
+        <article class="person">
+            <header class="person-header"> 
+                {{person.first_name}} {{person.last_name}}
+            </header>
+            <img src="{{ person.photo.url }}">
+        </article>
+        </a>
+        {% endfor %}
+    </div>
+</main>
+{% endblock content %}

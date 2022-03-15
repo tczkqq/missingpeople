@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block imports %}
+<link rel="stylesheet" href="{% static 'css/detail.css' %}">
+{% endblock imports %}
+
+
+{% block content %}
+<main>
+    <h1 class="center-text">Zagiony nr. {{ person.id }}</h1>
+    <section class="person-info">
+        <p>{{ person.first_name }} {{ person.last_name }} ({{ person.gender}} {{ person.age}})</p>
+        <p><img src="{{ person.photo.url }}"> </p>
+        <p>{{ person.description|linebreaks}}</p>
+        <p>Dodano: {{ person.created|date:'Y-m-d'}} <br />
+        Przez: {{user.username}} </p>
+    </section>    
+</main>
+{% endblock content %}

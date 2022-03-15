@@ -1,0 +1,76 @@
+@import 'theme.scss';
+
+body {
+    margin: 0;
+    background-color: $bgColor;
+    font-family: 'Fredoka', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: $secondaryColor;    
+
+    &:hover {
+        color: $primaryColor;
+    }
+}
+
+.wrapper {
+    max-width: 1366px;
+    display: grid;
+    margin: 0 auto;
+
+    .nav-header {
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        position: sticky;
+        background-color: $bgColor;
+
+        .nav-main {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        #logo {
+            margin: 20px;
+            font-size: 20px;
+        }
+
+        .nav-item {
+            margin: 0 10px;
+            padding: 20px;
+
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    
+    }
+    
+}
+
+
+.footer {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.center-text {
+    text-align: center;
+}
+.stretch {
+    width: 100%;
+}
+
+.btn {
+    padding: 10px;
+    font-family: 'Fredoka', sans-serif;
+}

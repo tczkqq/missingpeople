@@ -1,0 +1,23 @@
+.persons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.persons .person {
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+.persons .person:hover {
+  border-color: #D32C14;
+}
+
+.persons .person img {
+  margin-top: 10px;
+  height: 300px;
+}

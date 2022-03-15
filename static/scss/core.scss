@@ -1,0 +1,26 @@
+@import 'theme.scss';
+
+
+.persons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .person {
+        padding: 20px;
+        margin: 20px;
+        text-align: center;
+        border: 2px solid $secondaryColor;
+        border-radius: 5px;
+
+        &:hover {
+            border-color: $primaryColor;
+        }
+
+        img {
+            margin-top: 10px;
+            height: 300px;
+        }
+    }
+}

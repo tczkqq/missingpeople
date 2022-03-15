@@ -1,0 +1,23 @@
+@import 'theme.scss';
+
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+
+    .person-info {
+        margin-top: 30px;
+        padding: 0 30px 30px 30px;
+        border: 2px solid $secondaryColor;
+        border-radius: 10px;
+        width: 20%;
+        align-self: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+    }
+}
+

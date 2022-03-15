@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block imports %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+{% endblock imports %}
+
+
+{% block content %}
+<main>
+    <h1 class="center-text">Dodaj zaginięcie</h1>
+    <form method="post" class="auth-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="stretch btn">Dodaj zaginięcie</button>
+    </form>
+
+</main>
+{% endblock content %}

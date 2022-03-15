@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {{ title }} | Rejestr osób zaginionych</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+    {% block imports %}
+    {% endblock imports %}
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="nav-header">
+            <div id="logo">
+                <a href="{% url 'core:home' %}">Rejestr osób zaginionych</a>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-main">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a href="{% url 'accounts:logout' %}">Wyloguj</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'core:submited' %}">Moje zgłoszenia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'core:create' %}">Dodaj zgłoszenia</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a href="{% url 'accounts:register' %}">Zarejestruj</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'accounts:login' %}">Zaloguj się</a>
+                        </li>
+                    {% endif %}
+
+                    {% block menu %}
+                    {% endblock menu %}
+                </ul>
+            </div>
+        </header>
+
+        {% block content %}
+        {% endblock content %}
+
+        <footer class="footer">
+            Wykonał: Tomasz Jarnutowski Z610
+        </footer>
+    </div>
+</body>
+
+</html>
