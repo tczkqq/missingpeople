@@ -1,7 +1,7 @@
 @import 'theme.scss';
 
 
-.persons {
+#persons {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -21,6 +21,18 @@
         img {
             margin-top: 10px;
             height: 300px;
+            width: 240px;
         }
+    }
+}
+.fillters {
+    margin-top: 50px;
+    display: flex;
+    // flex-direction: row;
+    justify-content: space-around;
+
+    #gender {
+        width: 200px;
+        font-family: 'Fredoka', sans-serif;
     }
 }

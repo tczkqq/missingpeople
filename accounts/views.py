@@ -33,8 +33,6 @@ def login_view(request):
 def register_view(request):
     if request.user.is_authenticated: 
         return redirect('core:home')
-        
-    print(request.user.is_authenticated)
     
     if request.method == 'POST':
         form = UserCreationForm(request.POST)

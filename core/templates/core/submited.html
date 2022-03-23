@@ -10,7 +10,7 @@
 {% block content %}
 <main>
     <h1 class="center-text">Twoje zgłoszenia</h1>
-    <div class="persons">
+    <div id="persons">
         {% for person in persons %}
         <a href="{% url 'core:detail' id=person.id%}">
             <article class="person">

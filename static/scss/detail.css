@@ -15,3 +15,17 @@ main .person-info {
   align-items: center;
   flex-direction: column;
 }
+
+main .person-info img {
+  margin-top: 10px;
+  height: 300px;
+  width: 240px;
+}
+
+main #admin {
+  background-color: #D32C14;
+}
+
+main #admin a {
+  color: #fff;
+}

@@ -18,6 +18,18 @@ main {
         align-items: center;
         flex-direction: column;
 
+        img {
+            margin-top: 10px;
+            height: 300px;
+            width: 240px;
+        }
+    }
+
+    #admin {
+        background-color: $primaryColor;
+        a {
+            color: #fff;
+        }
     }
 }
 

@@ -10,7 +10,20 @@
 {% block content %}
 <main>
     <h1 class="center-text">Osoby zaginione</h1>
-    <div class="persons">
+    <section class="fillters">
+        <select name="gender" id="gender">
+            <option value="">Wybierz płeć</option>
+            <option value="M">Mężczyzna</option>
+            <option value="K">Kobieta</option>
+        </select>
+        <div class="range">
+            <label for="age-from">Wiek od:</label>
+            <input type="number" name="age-from" id="age-from">
+            <label for="age-to">do:</label>
+            <input type="number" name="age-to" id="age-to">
+        </div>
+    </section>
+    <div id="persons">
         {% for person in persons %}
         <a href="{% url 'core:detail' id=person.id%}">
         <article class="person">
@@ -23,4 +36,5 @@
         {% endfor %}
     </div>
 </main>
+<script src="{% static 'js/persons.js' %}"></script>
 {% endblock content %}

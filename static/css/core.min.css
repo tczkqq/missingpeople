@@ -1,11 +1,11 @@
-.persons {
+#persons {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
-.persons .person {
+#persons .person {
   padding: 20px;
   margin: 20px;
   text-align: center;
@@ -13,13 +13,25 @@
   border-radius: 5px;
 }
 
-.persons .person:hover {
+#persons .person:hover {
   border-color: #D32C14;
 }
 
-.persons .person img {
+#persons .person img {
   margin-top: 10px;
   height: 300px;
+  width: 240px;
+}
+
+.fillters {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fillters #gender {
+  width: 200px;
+  font-family: "Fredoka", sans-serif;
 }
 
 /*# sourceMappingURL=core.min.css.map */
