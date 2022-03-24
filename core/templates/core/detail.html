@@ -13,10 +13,11 @@
     <h1 class="center-text">Zagiony nr. {{ person.id }}</h1>
     <section class="person-info">
         {% if user.is_superuser or user == person.reporting_person %}
-        <section id="admin">
-            <a href="{% url 'core:delete' id=person.id %}">Usuń wpis</a>
-        </section>
-        {% endif %}
+    <section id="admin">
+        <a href="{% url 'core:edit' id=person.id %}">Edytuj</a>
+        <a href="{% url 'core:delete' id=person.id %}">Usun</a>
+    </section>    
+    {% endif %}
         <p>{{ person.first_name }} {{ person.last_name }} ({{ person.gender}} {{ person.age}})</p>
         <p><img src="{{ person.photo.url }}"> </p>
         <p>{{ person.description|linebreaks}}</p>

@@ -56,6 +56,34 @@ def detail_view(request, id):
     return render(request, 'core/detail.html', context)
 
 
+@login_required
+def edit_view(request, id):
+    person = get_object_or_404(MissingPerson, id=id)
+    if not ((request.user.is_superuser) or (person.reporting_person == request.user)):
+        return redirect('core:home') 
+    
+    if request.method == 'POST':
+        form = AddPerson(request.POST, instance=person)
+        if form.is_valid():
+            form.save()
+            return redirect('core:detail', id=person.id)
+    else:
+        form = AddPerson()
+        form.initial['first_name'] = person.first_name
+        form.initial['last_name'] = person.last_name
+        form.initial['gender'] = person.gender
+        form.initial['photo'] = person.photo
+        form.initial['description'] = person.description
+        form.initial['last_seen'] = person.last_seen
+        form.initial['age'] = person.age
+    context = {
+        'title': 'Strona głowna',
+        'form': form,
+        'person': person
+    }
+    return render(request, 'core/edit.html', context)
+
+
 def get_persons_ajax(request):        
     persons = MissingPerson.objects.all().order_by('-created')
     if 'gender' in request.GET: 

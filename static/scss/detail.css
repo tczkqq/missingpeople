@@ -23,9 +23,12 @@ main .person-info img {
 }
 
 main #admin {
-  background-color: #D32C14;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 main #admin a {
-  color: #fff;
+  color: #D32C14;
+  font-weight: bold;
 }

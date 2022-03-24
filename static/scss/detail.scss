@@ -26,9 +26,12 @@ main {
     }
 
     #admin {
-        background-color: $primaryColor;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
         a {
-            color: #fff;
+            color: $primaryColor;
+            font-weight: bold;
         }
     }
 }
