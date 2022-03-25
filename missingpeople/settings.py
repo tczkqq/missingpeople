@@ -114,7 +114,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-LOGIN_URL = 'account/login'
+LOGIN_URL = 'accounts:login'
 
 
 # Default primary key field type
