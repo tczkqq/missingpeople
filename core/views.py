@@ -86,14 +86,27 @@ def edit_view(request, id):
 
 def get_persons_ajax(request):        
     persons = MissingPerson.objects.all().order_by('-created')
+    print(request.GET)
+    
+    # TODO: Strip ? from query parameter
+    
     if 'gender' in request.GET: 
         persons = persons.filter(gender=request.GET['gender'])
+        
+    if '?gender' in request.GET: 
+        persons = persons.filter(gender=request.GET['?gender'])
         
     if 'fill_from' in request.GET:
         persons = persons.filter(age__gte=request.GET['fill_from'])
         
+    if '?fill_from' in request.GET:
+        persons = persons.filter(age__gte=request.GET['?fill_from'])
+        
     if 'fill_to' in request.GET:
         persons = persons.filter(age__lte=request.GET['fill_to'])
+        
+    if '?fill_to' in request.GET:
+        persons = persons.filter(age__lte=request.GET['?fill_to'])
 
     serialized_persons = serializers.serialize('json', persons)
     return HttpResponse(serialized_persons, content_type="application/json")

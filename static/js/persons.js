@@ -19,11 +19,14 @@ function fillter() {
             
         }
     };
-    let params = '';
-    if (!gender.value == '') params += ';gender=' + fill_gender.value;
-    if (!fill_from.value == '') {params += ';fill_to=' + fill_to.value};
-    if (!fill_to.value == '') params += ';fill_from=' + fill_from.value;
-    xmlhttp.open("GET", 'http://localhost:8000/api/get_persons?' + params, true);
+    let params = {};
+    if (!gender.value == '') params['gender'] = fill_gender.value;
+    if (!fill_from.value == '') params['fill_to'] =  fill_to.value;
+    if (!fill_to.value == '') params['fill_from'] =  fill_from.value;
+    const parsedParams = formatParams(params);
+    console.log(parsedParams)
+    console.log(params)
+    xmlhttp.open("GET", 'http://localhost:8000/api/get_persons?' + parsedParams, true);
     xmlhttp.send();
     
 }
@@ -32,3 +35,11 @@ gender.addEventListener('change', fillter);
 fill_from.addEventListener('change', fillter);
 fill_to.addEventListener('change', fillter);
 
+function formatParams( params ){
+  return "?" + Object
+        .keys(params)
+        .map(function(key){
+          return key+"="+encodeURIComponent(params[key])
+        })
+        .join("&")
+}
